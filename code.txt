@@ -1,0 +1,13 @@
+import time
+
+from selenium import webdriver
+
+driver = webdriver.Chrome(executable_path="C:\\chromedriver.exe")
+
+driver.get("https://www.youtube.com/")
+driver.find_element_by_css_selector("input[type='text']").send_keys("sivakumar pondati")
+driver.find_element_by_css_selector("#search-icon-legacy > yt-icon").click()
+driver.find_element_by_xpath("//*[@id='thumbnail']").click()
+time.sleep(8)
+driver.back()
+driver.find_element_by_xpath("//*[@id='endpoint']").click()
